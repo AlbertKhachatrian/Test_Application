@@ -1,0 +1,60 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.example.test"
+        minSdk 23
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures{
+        dataBinding true
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation project(":domain")
+    implementation project(":data")
+    implementation project(":base-mvvm")
+    implementation libs.core
+    implementation libs.appCompat
+    implementation libs.constraintLayout
+    annotationProcessor libs.compiler
+    implementation libs.coroutines_core
+    implementation libs.coroutines_android
+    implementation libs.appCompat
+    implementation libs.material
+    implementation libs.constraintLayout
+    implementation libs.navigation
+    implementation libs.navigationUi
+    implementation libs.liveData
+    implementation libs.lifecycle
+    implementation libs.lifecycle_viewmodel
+    implementation libs.lifecycle_common
+    implementation libs.koin
+
+}

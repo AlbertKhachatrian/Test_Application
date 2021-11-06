@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="confirm">Confirm</string>
+    <string name="make_a_transfer">Make a transfer</string>
+    <string name="accumulative">Accumulative</string>
+    <string name="payment">Payment</string>
+    <string name="total_liters">Total liters</string>
+    <string name="x_dollar">%s$</string>
+</resources>

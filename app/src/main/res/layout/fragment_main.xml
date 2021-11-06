@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple">
+
+    <ImageButton
+        android:id="@+id/menu_button"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="@dimen/margin_mid"
+        android:layout_marginTop="@dimen/margin_mid"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/name"
+        style="@style/Test.HeaderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_mid"
+        android:textAllCaps="true"
+        app:layout_constraintStart_toStartOf="@id/menu_button"
+        app:layout_constraintTop_toBottomOf="@id/menu_button"
+        tools:text="Marc fernandez" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/email"
+        style="@style/Test.SubHeaderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        tools:text="marcfernandez@gmail.com" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/payment_container"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="@dimen/margin_mid"
+        android:background="@drawable/bg_payment_container"
+        android:paddingVertical="@dimen/margin_l"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/accumulative_value"
+            style="@style/Test.HeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/decorative_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="12500$"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/Test.SubHeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/accumulative"
+            app:layout_constraintEnd_toEndOf="@id/accumulative_value"
+            app:layout_constraintStart_toStartOf="@id/accumulative_value"
+            app:layout_constraintTop_toBottomOf="@id/accumulative_value" />
+
+        <View
+            android:id="@+id/decorative_view"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/purple_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/payment_value"
+            style="@style/Test.HeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/decorative_view"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="12500$" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/payment_title"
+            style="@style/Test.SubHeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/payment"
+            app:layout_constraintEnd_toEndOf="@id/payment_value"
+            app:layout_constraintStart_toStartOf="@id/payment_value"
+            app:layout_constraintTop_toBottomOf="@id/payment_value" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingHorizontal="@dimen/margin_mid"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/payment_container">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/body_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/make_a_transfer"
+                    style="@style/Test.SubHeaderText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_mid"
+                    android:text="@string/make_a_transfer"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/margin_mid"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/make_a_transfer">
+
+                    <RadioButton
+                        android:id="@+id/accumulative_btn"
+                        style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_btn_radio"
+                        android:button="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="@string/accumulative"
+                        android:textColor="@drawable/bg_text_radio"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/payment_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_btn_radio"
+                        android:button="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="@string/payment"
+                        android:textColor="@drawable/bg_text_radio"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/total_liters_et"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:hint="@string/total_liters"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/radio_group" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:paddingVertical="@dimen/margin_small"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/total_liters_et" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/confirm_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:text="@string/confirm"
+        android:textAllCaps="false"
+        android:layout_marginHorizontal="@dimen/margin_mid"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
